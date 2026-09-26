@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Nikhil Kaushal — Software Engineer specialising in backend and AI engineering." />
+    <meta name="theme-color" content="#f6f4ee" />
+    <title>Nikhil Kaushal — Backend & AI Engineering</title>
+    <style>
+      :root {
+        --ink: #17211f;
+        --muted: #59645f;
+        --paper: #f6f4ee;
+        --card: #fffcf6;
+        --line: #d9ddd4;
+        --acid: #b8ff5a;
+        --teal: #0f7469;
+        --coral: #ff715b;
+        --serif: Iowan Old Style, Palatino Linotype, Book Antiqua, Palatino, Georgia, serif;
+        --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: var(--paper);
+        font-family: var(--sans);
+        font-size: 16px;
+        line-height: 1.55;
+      }
+      a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+      a:hover { color: var(--teal); }
+
+      .shell { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+      .topbar {
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 22px 0; border-bottom: 1px solid var(--line);
+        font-size: .8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+      }
+      .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+      .brand-mark { width: 11px; height: 11px; background: var(--coral); border-radius: 50%; box-shadow: 8px 0 0 var(--acid); }
+      .nav { display: flex; gap: 18px; color: var(--muted); }
+      .nav a { text-decoration: none; }
+
+      .hero { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(240px, .65fr); gap: 50px; padding: 88px 0 75px; }
+      .eyebrow, .section-label { color: var(--teal); font-size: .75rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+      h1 { max-width: 850px; margin: 13px 0 24px; font: 700 clamp(3.2rem, 7.1vw, 6.6rem)/.95 var(--serif); letter-spacing: -.065em; }
+      .hero h1 em { color: var(--teal); font-style: italic; }
+      .lede { max-width: 700px; margin: 0; color: #35423d; font: 1.17rem/1.68 var(--sans); }
+      .hero-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 31px; }
+      .button { display: inline-flex; align-items: center; gap: 8px; padding: 10px 15px; border: 1px solid var(--ink); background: var(--ink); color: #fff; border-radius: 999px; text-decoration: none; font-size: .88rem; font-weight: 750; }
+      .button:hover { background: var(--teal); border-color: var(--teal); color: #fff; }
+      .button.secondary { background: transparent; color: var(--ink); }
+
+      .profile-card { align-self: end; position: relative; padding: 22px; background: var(--ink); color: #f7f8f1; border-radius: 4px; overflow: hidden; }
+      .profile-card::after { content: ""; position: absolute; inset: auto -75px -82px auto; width: 220px; height: 220px; border-radius: 50%; background: var(--acid); opacity: .95; }
+      .profile-card img { display: block; width: 74px; height: 74px; border: 2px solid var(--acid); border-radius: 50%; filter: grayscale(1); position: relative; z-index: 1; }
+      .profile-card p { position: relative; z-index: 1; margin: 26px 0 0; font-family: var(--serif); font-size: 1.28rem; line-height: 1.2; }
+      .profile-card span { position: relative; z-index: 1; display: block; margin-top: 8px; color: #c5ccc5; font-size: .82rem; }
+
+      .signal-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+      .signal { min-height: 170px; padding: 26px 25px; border-right: 1px solid var(--line); }
+      .signal:last-child { border: 0; }
+      .signal h2 { margin: 32px 0 0; font: 700 1.42rem/1.05 var(--serif); letter-spacing: -.03em; }
+      .signal p { margin: 10px 0 0; color: var(--muted); font-size: .87rem; }
+      .signal .shape { width: 31px; height: 31px; background: var(--acid); border-radius: 50%; }
+      .signal:nth-child(2) .shape { background: var(--coral); border-radius: 0; transform: rotate(45deg); }
+      .signal:nth-child(3) .shape { background: var(--teal); border-radius: 0 50% 50% 50%; }
+      .signal:nth-child(4) .shape { border: 8px solid var(--ink); background: transparent; }
+
+      main { padding: 92px 0 60px; }
+      .section { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 42px; padding: 0 0 78px; }
+      .section-content { min-width: 0; }
+      .section-title { margin: -7px 0 28px; font: 700 clamp(2.35rem, 4vw, 3.8rem)/.98 var(--serif); letter-spacing: -.055em; }
+      .section-intro { max-width: 720px; margin: -4px 0 35px; color: var(--muted); font-size: 1.04rem; }
+
+      .experience { border-top: 1px solid var(--line); }
+      .role { display: grid; grid-template-columns: 155px minmax(0, 1fr); gap: 28px; padding: 30px 0; border-bottom: 1px solid var(--line); }
+      .date { color: var(--muted); font-size: .85rem; font-weight: 650; }
+      .role h3 { margin: 0; font-size: 1.06rem; line-height: 1.3; }
+      .role h3 span { color: var(--teal); }
+      .role .location { display: block; margin-top: 3px; color: var(--muted); font-size: .87rem; }
+      .role ul { margin: 14px 0 0; padding-left: 19px; }
+      .role li + li { margin-top: 8px; }
+      .stack { margin-top: 15px; color: var(--muted); font-size: .84rem; }
+      .stack strong { color: var(--ink); }
+
+      .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px; }
+      .project { min-height: 245px; padding: 26px; border: 1px solid var(--line); background: var(--card); text-decoration: none; transition: transform .18s ease, box-shadow .18s ease; }
+      .project:hover { color: var(--ink); transform: translateY(-4px); box-shadow: 5px 6px 0 var(--ink); }
+      .project-num { color: var(--teal); font-size: .76rem; font-weight: 800; letter-spacing: .1em; }
+      .project h3 { margin: 54px 0 10px; font: 700 2rem/1 var(--serif); letter-spacing: -.05em; }
+      .project p { margin: 0; color: var(--muted); font-size: .92rem; }
+      .project-arrow { display: block; margin-top: 24px; font-size: 1.35rem; }
+
+      .skills { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+      .skill-group { padding: 22px 0; border-top: 2px solid var(--ink); }
+      .skill-group h3 { margin: 0 0 10px; font: 700 1.45rem var(--serif); letter-spacing: -.035em; }
+      .skill-group p { margin: 0; color: var(--muted); font-size: .91rem; }
+
+      .footer { padding: 50px 0 36px; background: var(--ink); color: #f7f7ef; }
+      .footer-grid { display: flex; justify-content: space-between; align-items: end; gap: 30px; }
+      .footer h2 { max-width: 640px; margin: 11px 0 0; font: 700 clamp(2.5rem, 5vw, 4.8rem)/.95 var(--serif); letter-spacing: -.065em; }
+      .footer h2 em { color: var(--acid); }
+      .contact-list { display: grid; gap: 9px; margin: 30px 0 0; }
+      .contact-list a { color: #fff; font-weight: 700; }
+      .footnote { margin-top: 58px; color: #aeb8ad; font-size: .78rem; }
+
+      @media (max-width: 800px) {
+        .shell { padding: 0 20px; }
+        .nav { display: none; }
+        .hero { grid-template-columns: 1fr; gap: 35px; padding: 60px 0; }
+        .profile-card { max-width: 410px; }
+        .signal-grid { grid-template-columns: repeat(2, 1fr); }
+        .signal:nth-child(2) { border-right: 0; }
+        .signal:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+        main { padding-top: 62px; }
+        .section { grid-template-columns: 1fr; gap: 18px; padding-bottom: 60px; }
+        .role { grid-template-columns: 1fr; gap: 10px; }
+        .project-grid, .skills { grid-template-columns: 1fr; }
+        .footer-grid { display: block; }
+      }
+
+      @media (max-width: 430px) {
+        h1 { font-size: 3.35rem; }
+        .signal { min-height: 145px; padding: 20px 16px; }
+        .signal h2 { margin-top: 22px; font-size: 1.15rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="shell">
+      <header class="topbar">
+        <a class="brand" href="#top"><span class="brand-mark"></span>Nikhil Kaushal</a>
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="#work">Work</a><a href="#projects">Projects</a><a href="#skills">Stack</a><a href="#contact">Contact</a>
+        </nav>
+      </header>
+
+      <section class="hero" id="top">
+        <div>
+          <div class="eyebrow">Software Engineer · Hyderabad, India</div>
+          <h1>I build <em>reliable</em> systems where backend engineering meets AI.</h1>
+          <p class="lede">I’m Nikhil—an engineer working across Java/Spring services, event-driven distributed systems, and production LLM applications. I enjoy making complex workflows dependable, observable, and cost-conscious.</p>
+          <div class="hero-links">
+            <a class="button" href="mailto:kaushalnikhil99@gmail.com">Let’s talk <span>↗</span></a>
+            <a class="button secondary" href="https://www.linkedin.com/in/kaushalnikhil99" target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a>
+            <a class="button secondary" href="https://github.com/nkaushal99" target="_blank" rel="noreferrer">GitHub <span>↗</span></a>
+          </div>
+        </div>
+        <aside class="profile-card" aria-label="Profile summary">
+          <img src="https://github.com/nkaushal99.png" alt="Nikhil Kaushal" />
+          <p>Backend systems, agentic AI, and the engineering that makes both hold up in production.</p>
+          <span>Java · Python · AWS · Kafka · LangGraph</span>
+        </aside>
+      </section>
+
+      <section class="signal-grid" aria-label="Areas of expertise">
+        <article class="signal"><div class="shape"></div><h2>Applied AI</h2><p>Agents, RAG, evaluation, and workflow control.</p></article>
+        <article class="signal"><div class="shape"></div><h2>Distributed Systems</h2><p>Async workflows, eventing, ordering, and recovery.</p></article>
+        <article class="signal"><div class="shape"></div><h2>Cloud & Data</h2><p>AWS, DynamoDB, S3, SQL/NoSQL, and vectors.</p></article>
+        <article class="signal"><div class="shape"></div><h2>Product Mindset</h2><p>Reliability, cost, and developer experience as features.</p></article>
+      </section>
+    </div>
+
+    <main class="shell">
+      <section class="section" id="work">
+        <div class="section-label">01 / Experience</div>
+        <div class="section-content">
+          <h2 class="section-title">Things I’ve built at work.</h2>
+          <div class="experience">
+            <article class="role">
+              <div class="date">Jun 2025 — Present</div>
+              <div>
+                <h3>Demandbase <span>· Software Engineer</span></h3><span class="location">Hyderabad, India</span>
+                <ul>
+                  <li>Built a production multi-agent platform handling <strong>10K+ weekly requests</strong>, with routing, validation, guardrails, and multi-step workflow controls.</li>
+                  <li>Engineered event-driven RAG ingestion for parsing, chunking, vector indexing, and stateful failure recovery.</li>
+                  <li>Developed LLM-as-Judge batch evaluation with versioned rubrics, cutting spend by <strong>50%</strong> through batch inference.</li>
+                </ul>
+                <p class="stack"><strong>Stack:</strong> Python, LangChain, LangGraph, RAG, AWS, Slack APIs</p>
+              </div>
+            </article>
+            <article class="role">
+              <div class="date">Mar 2024 — Jun 2025</div>
+              <div>
+                <h3>Murf AI <span>· Software Engineer</span></h3><span class="location">Bengaluru, India</span>
+                <ul>
+                  <li>Scaled sentence-level TTS with batched parallel synthesis: <strong>3× throughput</strong>, <strong>70% lower inference cost</strong>, and lower render latency.</li>
+                  <li>Implemented typed SQS FIFO workflows with deduplication to preserve per-tenant ordering while scaling independent workflows.</li>
+                  <li>Modelled multi-tenant DynamoDB workloads using composite keys and optimistic concurrency control.</li>
+                </ul>
+                <p class="stack"><strong>Stack:</strong> Java, Spring Boot, AWS SQS, DynamoDB, Lambda, Docker</p>
+              </div>
+            </article>
+            <article class="role">
+              <div class="date">Jan 2022 — Mar 2024</div>
+              <div>
+                <h3>MSB Docs <span>· Junior Engineer</span></h3><span class="location">Chandigarh, India</span>
+                <ul>
+                  <li>Built a Spring State Machine signing engine with guarded transitions and reusable action pipelines.</li>
+                  <li>Established Kafka eventing for signing workflows, moving audit logging and notifications off the synchronous path.</li>
+                  <li>Resolved SEV-1 incidents within an hour and converted root causes into long-term reliability improvements.</li>
+                </ul>
+                <p class="stack"><strong>Stack:</strong> Java, Spring Boot, Kafka, SQL, REST APIs</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="projects">
+        <div class="section-label">02 / Selected projects</div>
+        <div class="section-content">
+          <h2 class="section-title">Experiments that sharpen the craft.</h2>
+          <p class="section-intro">A few hands-on explorations in retrieval, real-time systems, event-driven architecture, and agentic applications.</p>
+          <div class="project-grid">
+            <a class="project" href="https://github.com/nkaushal99/one-rag" target="_blank" rel="noreferrer"><span class="project-num">01 — RAG</span><h3>One RAG</h3><p>Document intelligence and retrieval-augmented generation workflows.</p><span class="project-arrow">↗</span></a>
+            <a class="project" href="https://github.com/nkaushal99/vibesense-agent" target="_blank" rel="noreferrer"><span class="project-num">02 — Agents</span><h3>VibeSense</h3><p>Music recommendations grounded in live heart-rate signals and user preferences.</p><span class="project-arrow">↗</span></a>
+            <a class="project" href="https://github.com/nkaushal99/event-driven-microservices" target="_blank" rel="noreferrer"><span class="project-num">03 — Systems</span><h3>Event-driven</h3><p>Patterns for asynchronous backend workflows and resilient services.</p><span class="project-arrow">↗</span></a>
+            <a class="project" href="https://github.com/nkaushal99/realtime-chat" target="_blank" rel="noreferrer"><span class="project-num">04 — Realtime</span><h3>Realtime Chat</h3><p>Messaging-system architecture and implementation explorations.</p><span class="project-arrow">↗</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="skills">
+        <div class="section-label">03 / Toolset</div>
+        <div class="section-content">
+          <h2 class="section-title">A pragmatic stack.</h2>
+          <div class="skills">
+            <article class="skill-group"><h3>AI engineering</h3><p>AI Agents · LangChain · LangGraph · RAG · LLM-as-Judge · Vector Databases · MCP</p></article>
+            <article class="skill-group"><h3>Backend & systems</h3><p>Java · Python · Spring Boot · FastAPI · Kafka · SQS · REST · State Machines · Microservices</p></article>
+            <article class="skill-group"><h3>Cloud & data</h3><p>AWS · Lambda · S3 · DynamoDB · SQL · NoSQL · Docker · Event-Driven Architecture</p></article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" id="contact">
+      <div class="shell">
+        <div class="footer-grid">
+          <div>
+            <div class="section-label" style="color: var(--acid)">04 / Contact</div>
+            <h2>Let’s build something <em>useful.</em></h2>
+          </div>
+          <div class="contact-list">
+            <a href="mailto:kaushalnikhil99@gmail.com">kaushalnikhil99@gmail.com ↗</a>
+            <a href="https://www.linkedin.com/in/kaushalnikhil99" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+            <a href="https://github.com/nkaushal99" target="_blank" rel="noreferrer">GitHub ↗</a>
+          </div>
+        </div>
+        <div class="footnote">© 2026 Nikhil Kaushal · Built as a static site for GitHub Pages</div>
+      </div>
+    </footer>
+  </body>
+</html>
